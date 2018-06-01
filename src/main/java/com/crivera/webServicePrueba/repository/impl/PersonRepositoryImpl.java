@@ -49,4 +49,15 @@ public class PersonRepositoryImpl implements PersonRepository {
 		return person;
 	}
 
+	@Override
+	public void deletePersonById(PersonDao person) {
+		System.out.println(person.toString());
+		entityManager = emf.createEntityManager();
+		entityManager.getTransaction().begin();
+		entityManager.remove(person);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+	}
+
 }

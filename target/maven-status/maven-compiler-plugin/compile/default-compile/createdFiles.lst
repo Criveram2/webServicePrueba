@@ -1,0 +1,10 @@
+com\crivera\webServicePrueba\repository\PersonRepository.class
+com\crivera\webServicePrueba\service\impl\PersonServiceImpl.class
+com\crivera\webServicePrueba\config\AppConfig.class
+com\crivera\webServicePrueba\modelDao\PersonDao.class
+com\crivera\webServicePrueba\controller\pruebaController.class
+com\crivera\webServicePrueba\model\Person.class
+com\crivera\webServicePrueba\repository\impl\PersonRepositoryImpl.class
+com\crivera\webServicePrueba\service\PersonService.class
+com\crivera\webServicePrueba\config\WebAppInitializer.class
+com\crivera\webServicePrueba\utils\UtilsJson.class

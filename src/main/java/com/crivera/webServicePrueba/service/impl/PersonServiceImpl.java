@@ -35,4 +35,10 @@ public class PersonServiceImpl implements PersonService {
 		return person;
 	}
 
+	@Override
+	public void deletePersonById(Integer id) {
+		PersonDao personDao = personRepository.findPersonById(id);
+		personRepository.deletePersonById(personDao);
+	}
+
 }

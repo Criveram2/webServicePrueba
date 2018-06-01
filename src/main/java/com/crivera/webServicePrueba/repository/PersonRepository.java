@@ -9,7 +9,9 @@ public interface PersonRepository {
 	void insertPerson(PersonDao person);
 
 	List<PersonDao> findAllPersons();
-	
+
 	PersonDao findPersonById(Integer id);
+
+	public void deletePersonById(PersonDao person);
 
 }

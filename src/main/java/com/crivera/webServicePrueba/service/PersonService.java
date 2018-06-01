@@ -11,4 +11,6 @@ public interface PersonService {
 	List<PersonDao> findAllPersons();
 
 	Person findPersonById(Integer id);
+	
+	void deletePersonById(Integer id);
 }

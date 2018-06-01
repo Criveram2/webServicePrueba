@@ -56,20 +56,30 @@ public class pruebaController {
 		String jsonResponde = new Gson().toJson(persons);
 		return new ResponseEntity<String>(jsonResponde, HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/Person/{personId}", produces = { "application/json" }, method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<String> findPersonById(@PathVariable Integer personId) {
 		System.out.println("findPersonById");
-		Person person =personManager.findPersonById(personId);
+		Person person = personManager.findPersonById(personId);
+		String representacionJSON = new Gson().toJson(person);
+		return new ResponseEntity<String>(representacionJSON, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/PersonId", produces = { "application/json" }, method = RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<String> findPersonByIdPrueba(@RequestParam("personId") Integer personId) {
+		System.out.println("findPersonById");
+		Person person = personManager.findPersonById(personId);
 		String representacionJSON = new Gson().toJson(person);
 		return new ResponseEntity<String>(representacionJSON, HttpStatus.OK);
 	}
 	
-	 @RequestMapping(value = "/Person/{personId}", method = RequestMethod.DELETE)
-	    public ResponseEntity removeEventById(@PathVariable Integer personId){
-	        return new ResponseEntity<>(HttpStatus.OK);
-	    }
-	 
+	
+	@RequestMapping(value = "/Person/{personId}", method = RequestMethod.DELETE)
+	public ResponseEntity removeEventById(@PathVariable Integer personId) {
+		personManager.deletePersonById(personId);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
 
 }
